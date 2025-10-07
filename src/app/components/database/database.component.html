@@ -1,0 +1,26 @@
+<!-- database.component.html -->
+<div class="gallery" (keydown)="handleKeydown($event)" tabindex="0">
+  <div class="thumbnails">
+    <img
+      *ngFor="let imageUrl of imageUrls; let i = index"
+      [src]="imageUrl"
+      [alt]="'Imagen ' + (i + 1)"
+      class="thumbnail"
+      (click)="openLightbox(i)"
+    />
+  </div>
+
+  <div class="lightbox" *ngIf="isLightboxOpen">
+    <div class="overlay" (click)="closeLightbox()"></div>
+    <div class="lightbox-content" tabindex="0">
+      <button class="close-btn" (click)="closeLightbox()" aria-label="Cerrar">×</button>
+      <button class="prev-btn" (click)="previousImage()" aria-label="Imagen anterior">&#10094;</button>
+      <img
+        [src]="imageUrls[selectedImageIndex || 0]"
+        [alt]="'Imagen ' + ((selectedImageIndex || 0) + 1)"
+        class="lightbox-image"
+      />
+      <button class="next-btn" (click)="nextImage()" aria-label="Imagen siguiente">&#10095;</button>
+    </div>
+  </div>
+</div>

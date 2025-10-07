@@ -1,0 +1,106 @@
+/* database.component.css */
+.gallery {
+  max-width: 900px;
+  margin: 1rem auto;
+  outline: none; /* To remove focus outline, handle focus styles otherwise */
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.thumbnail {
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.thumbnail:hover,
+.thumbnail:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0,0,0,0.35);
+  outline: none;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  cursor: pointer;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 15px rgba(255,255,255,0.7);
+  user-select: none;
+  pointer-events: none;
+}
+
+.close-btn,
+.prev-btn,
+.next-btn {
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.close-btn {
+  top: -2.5rem;
+  right: 0;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.prev-btn:hover,
+.next-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev-btn {
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next-btn {
+  right: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
