@@ -18,8 +18,11 @@
 
   <!-- Navigation Menu -->
   <nav class="flex-1 py-6">
-    <ul class="space-y-1 px-3">
-      <li *ngFor="let item of menuItems">
+    <ul class="divide-y divide-gray-700 px-3">
+      <li 
+        *ngFor="let item of menuItems"
+        class="flex flex-col"
+      >
         <a 
           [routerLink]="item.route"
           routerLinkActive="bg-dash-blue text-white"
